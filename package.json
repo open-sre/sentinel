@@ -1,0 +1,15 @@
+{
+  "name": "sentinel",
+  "version": "1.0.0",
+  "description": "distributed healthcheck probing system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Keet Sugathadasa",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "simple-node-logger": "^18.12.24"
+  }
+}

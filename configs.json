@@ -1,0 +1,11 @@
+[
+    {
+        "id": "Application_Fusion_HealthCheckProbe",
+        "pollSeconds": 10,
+        "name": "fusion",
+        "endpoint": "https://www.daraz.lk/",
+        "metadata": {
+            "region": "Asia"
+        }
+    }
+]
