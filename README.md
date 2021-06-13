@@ -2,15 +2,14 @@
 <img src="https://github.com/open-sre/sentinel/blob/master/readme_images/sentinel-logo.jpg?raw=true" height="120" />
 </p>
 
-<h2 align="left">
+<h2 align="center">
   Syntetic Monitoring</br >
-  Blackbox Health Checking</br>
-Deploy in cloud | Ping any url | Wiew your urls response to external request
+  Deploy in cloud | Blackbox Health Checks | Metrics and Alerting</br>
 </h2>
 
 <br/>
 
-<p align="center">
+<p align="left">
   Sentinel is a <strong>Synthetic Monitoring</strong> toolkit, allows you to run your own black-box monitoring , made for checking the live health of urls, from an external environment.<br><br>
   Your application and service urls may seem healthy from inside, but how would you know whether they respond as expected to your external customers???<br><br>
   Sentinel is a lightweight toolkit, that can ping thousands of urls at a given second.<br><br>
