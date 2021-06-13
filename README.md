@@ -5,9 +5,7 @@
 <h2 align="center">
   Syntetic Monitoring</br >
   Blackbox Health Checking</br>
-  - deploy in cloud </br >
-  - ping any url </br>
-  - view your urls response to external requests -
+Deploy in cloud | Ping any url | Wiew your urls response to external request
 </h2>
 
 <br/>
