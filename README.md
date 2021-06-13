@@ -10,7 +10,7 @@
 <br/>
 
 <p align="left">
-  Sentinel is a free and open source<strong>Synthetic Monitoring</strong> toolkit, allows you to <strong>run your own black-box monitoring on prem or cloud</strong> , made for checking the live health of urls, from an external environment.<br><br>
+  Sentinel is a free and open source <strong>Synthetic Monitoring</strong> toolkit, allows you to <strong>run your own black-box monitoring on prem or cloud</strong> , made for checking the live health of urls, from an external environment.<br><br>
   Your application and service urls may seem healthy from inside, but how would you know whether they respond as expected to your external customers???<br><br>
   Sentinel is a lightweight toolkit, that can ping thousands of urls at a given second.<br><br>
   This tool is for developers, testers, dev-ops and SREs.
