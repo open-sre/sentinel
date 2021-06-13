@@ -2,7 +2,7 @@
 <img src="https://github.com/open-sre/sentinel/blob/master/readme_images/sentinel-logo.jpg?raw=true" height="120" />
 </p>
 
-<h2 align="center">
+<h2 align="left">
   Syntetic Monitoring</br >
   Blackbox Health Checking</br>
 Deploy in cloud | Ping any url | Wiew your urls response to external request
