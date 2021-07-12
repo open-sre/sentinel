@@ -76,6 +76,12 @@ Linux based machines can use the following to set up environment variables
 export REFRESH_INTERVAL=600
 ```
 
+### Step 5: Run the application
+Simply execute below command
+```
+node index.js
+```
+
 # License
 
 **Sentinel** is open-source software distributed under the terms of the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) license.
