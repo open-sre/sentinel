@@ -37,7 +37,7 @@
 
 ### Step 0: check for prerequisites
 
-- Install [NodeJS](https://nodejs.org/en/)
+- Install [NodeJS](https://nodejs.org/en/). Please make sure to install a node version greater than or equal to 14. you can check this by running `node --version`.
 
 ### Step 1: clone the repository
 
