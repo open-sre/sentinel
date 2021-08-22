@@ -30,6 +30,7 @@
 
 - **Test ANY url protocol**:  Currently supports https and http
 - **Cloud-native**: Go from running a test locally to running it in your own local machine, which can also be distributed across different geographies.
+- **Prometheus Integrated**: This service pushes all metrics to Prometheus, if you already have a Prometheus setup in your environment.
 - **and more!** Await more features
 
 # Getting Started With Sentinel
@@ -55,25 +56,13 @@ See the sample config given in `./configs.json` file. Given below is an explanat
 
 ```
 {
-        "id": "customID",  // unique for each config
         "pollSeconds": 10, // how frequently do you want to ping
         "name": "name", // name of the url, for reference and reporting
         "endpoint": "https://www.example.com/", // endpoint to be pinged
-        "metadata": { // include custom metadata which will be included in the reporting
+        "metadata": { // include custom metadata which will be included in the reporting (optional)
             "region": "Asia"
         }
     }
-```
-
-### Step 4 (Optional): Set up environment variables
-
-Environment variables in use:
-- `REFRESH_INTERVAL`: This will check your configs and refresh them. This value is in seconds. This allows you to dynamically change the configs without stopping the script. Default value is 300 seconds (5 minutes).
-
-Linux based machines can use the following to set up environment variables
-
-```
-export REFRESH_INTERVAL=600
 ```
 
 ### Step 5: Run the application
@@ -81,6 +70,36 @@ Simply execute below command
 ```
 node index.js
 ```
+
+### Step 4 (Optional): Set up environment variables
+
+Environment variables in use:
+- `REFRESH_INTERVAL`: This will check your configs and refresh them. This value is in seconds. This allows you to dynamically change the configs without stopping the script. Default value is 300 seconds (5 minutes).
+- `PROMETHEUS_METRIC_PREFIX`: This will be used as a prefix for the prometheus metrics exposed from Sentinel. The default is `sentinel_probing_`. 
+- `SERVER_PORT`: This is the port this service will be running in. Default value is 8080. On this port, the server will expose its endpoints for health and Prometheus Scraping.
+
+Linux based machines can use the following to set up environment variables
+
+```
+export REFRESH_INTERVAL=600
+export PROMETHEUS_METRIC_PREFIX=custom_prometheus_prefix_
+export SERVER_PORT=8080
+```
+
+### API Endpoints exposed by the service
+
+Sentinel exposes two endpoints running on port 8080. You can change this port by setting up an enviornment variable as given in Step 4.
+- `/metrics` --> This exposes all Prometheus Metrics of Sentinel (eg: http://localhost:8080/metrics)
+- `/health` --> This can be used as the health endpoint of Sentinel (eg: http://localhost:8080/health)
+
+### Monitoring metrics in Prometheus and Grafana
+
+For this, you need a Prometheus setup in your environment. You can visualise metrics in Prometheus using Grafana or any applicable tool used in your environment. Configure Prometheus to scrape from Sentinel via path `/metrics`. If this is running on your local machine: `http://localhost:8080/metrics`. (The port will change based in your environment variables).
+
+For each URL probing, the success and failure scenarios are incremented int he below two counters. With each metric, the labels `name` and `url` will be attached (these two values are taken from the configs defined when running Sentinel). 
+
+- `sentinel_probing_up_count` -> This counter will be incremented if the probing is successful on a URL.
+- `sentinel_probing_down_count` -> This counter will be incremented if the probing fails on a URL.
 
 # License
 
