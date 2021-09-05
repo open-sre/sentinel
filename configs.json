@@ -1,6 +1,5 @@
 [
     {
-        "id": "customID",
         "pollSeconds": 10,
         "name": "name",
         "endpoint": "https://www.example.com/",
